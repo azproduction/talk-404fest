@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Backbone в Яндексе</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="styles/screen.css">
+	<link rel="stylesheet" href="styles/print.css" media="print">
+
+    <link rel="stylesheet" href="styles/idea.min.css">
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Backbone в Яндексе</h1>
+		<p><a href="http://twitter.com/olmokhov_ru">Олег Мохов</a>, <a href="http://twitter.com/azproduction">Михаил Давыдов</a></p>
+	</header>
+
+	<section class="slide null">
+		<img src="images/yandex.svg" class="yandex"/>
+	</section>
+
+    <section class="slide first"><div class="arrow">
+    	<img src="images/yandex.svg" class="yandex"/>
+		<h2>Backbone в Яндексе</h2>
+        <div class="info">
+            <p class="author">Олег Мохов и Михаил Давыдов</p>
+            <p class="author">разработчики из Ебурга</p>
+            <p class="author">13 октября 2013, 404fest, Самара</p>
+        </div>
+    </div></section>
+    <section class="slide cover w c">
+   		<h2>SPA</h2>
+        <div><img src="pictures/spa.jpg"/></div>
+   	</section>
+
+
+    <section class="slide cover h w c">
+        <h2>Вы кто такие?</h2>
+        <img src="pictures/mokhov/why.jpg"/>
+    </section>
+    <section class="slide">
+        <div style='padding-bottom: 25px;'>
+            <img style="float: left; border-radius: 250px; margin-right: 100px;" src="fotos/oleg.jpg"/>
+            <h2>Олег Мохов</h2>
+            <div>Разработчик сервисов Такси и Девконсоль. Фанат метро и кошек.</div>
+        </div>
+        <div style="clear: both; padding-top: 50px;">
+            <img style="float: right; border-radius: 250px; margin-left: 100px;" src="fotos/misha.jpg"/>
+            <h2>Миша Давыдов</h2>
+            <div>Разработчик сервисов Такси и Мобайл. Блоггер. Фотограф.</div>
+        </div>
+    </section>
+
+    <section class="slide cover w c">
+        <h2 style="line-height: 1.1">Store Developer Console <a style="font-size: 80%" href="https://developer.store.yandex.ru">developer.store.yandex.ru</a></h2>
+        <img src="pictures/mokhov/store-image.png"/>
+   	</section>
+
+    <section class="slide cover w c">
+        <h2 style="line-height: 1.1">Тач Такси <br/><a style="font-size: 80%" href="https://m.taxi.yandex.ru">m.taxi.yandex.ru</a></h2>
+        <img src="pictures/iphone-taxi.png"/>
+   	</section>
+
+    <section class="slide cover w c">
+        <div><img src="pictures/mokhov/choice.png"/></div>
+   	</section>
+    <section class="slide">
+        <h2>Почему Backbone?</h2>
+        <ul>
+            <li>Простота</li>
+            <li class="next">Быстрый порог вхождения</li>
+            <li class="next">Большое комьюнити</li>
+            <li class="next">Куча модулей</li>
+            <li class="next">Гибкость</li>
+        </ul>
+   	</section>
+    <section class="slide">
+        <h2>Не Framework</h2>
+        <ul>
+            <li>В Яндексе есть BEM</li>
+            <li>BEM – уже фреймворк</li>
+            <li>Framework over Framework?</li>
+        </ul>
+   	</section>
+    <section class="slide cover w c">
+        <h2>View &mdash; интерфейс</h2>
+        <img src="pictures/mokhov/interface.jpg"/>
+   	</section>
+    <section class="slide cover w c">
+   		<h2>BEM</h2>
+        <img src="pictures/mokhov/all-blocks.jpg"/>
+    </section>
+    <section class="slide">
+        <h2>BEM</h2>
+        <ul>
+            <li>АНБ</li>
+            <li>Методология разделения технологий (CSS, HTML, JavaScript)</li>
+            <li>Система сборки</li>
+            <li>i-bem.js</li>
+            <li class="next">Логика веб-приложения</li>
+        </ul>
+   	</section>
+    <section class="slide">
+        <h2>BEM</h2>
+        <ul>
+            <li>АНБ</li>
+            <li>Методология разделения технологий (CSS, HTML, JavaScript)</li>
+            <li>Система сборки</li>
+            <li>i-bem.js</li>
+            <li style="text-decoration: line-through">Логика веб-приложения</li>
+        </ul>
+   	</section>
+
+    <section class="slide shout">
+   		<h2>BEM &mdash; WebComponents</h2>
+    </section>
+
+    <section class="slide shout">
+   		<h2>BEMJSON</h2>
+    </section>
+
+    <section class="slide">
+   		<h2>BEMJSON</h2>
+        <ul>
+            <li>Мета-шаблон</li>
+            <li class="next">Генерация css, js</li>
+            <li class="next">Генерация шаблонов</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Мета-шаблон</h2>
+        <pre class="l-7 javascript">
+            <code>{</code>
+            <code>    "block": <mark>"button"</mark>,</code>
+            <code>    "content": 'Нажми на меня!'</code>
+            <code>}</code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>На выходе CSS</h2>
+        <pre class="l-7 css">
+            <code>.button {</code>
+            <code>    border-radius: 5px;</code>
+            <code>    outline: 2px solid #eee;</code>
+            <code>    background: #fff;</code>
+            <code>}</code>
+            <code>.button_state_active {</code>
+            <code>    outline: 2px solid #f7f21a;</code>
+            <code>}</code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>На выходе JS</h2>
+        <pre class="l-7 javascript">
+            <code>// ...</code>
+            <code>this.bindTo('mouseover', function () {</code>
+            <code>    this.setMod('state', 'active');</code>
+            <code>});</code>
+            <code>this.bindTo('mouseout', function () {</code>
+            <code>    this.delMod('state');</code>
+            <code>});</code>
+            <code>// ...</code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>На выходе HTML</h2>
+        <pre class="l-7 xml">
+            <code>&lt;button class="button"&gt;</code>
+            <code>   Нажми на меня!</code>
+            <code>&lt;/button&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide cover h w">
+        <img src="pictures/mokhov/button.jpg"/>
+    </section>
+
+    <section class="slide cover w c">
+        <img src="pictures/datepicker-ios.png"/>
+    </section>
+    <section class="slide cover w c">
+        <img src="pictures/datepicker.png"/>
+    </section>
+    <section class="slide">
+        <h2>Пример: b-date-picker</h2>
+        <pre class="l-7 javascript">
+            <code>$('.b-date-picker').bem('b-date-picker');</code>
+            <code>datePicker.val(new Date());</code>
+            <code>datePicker.val();</code>
+            <code>datePicker.setTimeZone('+0400');</code>
+            <code>datePicker.on('change', function (e) {</code>
+            <code>    console.log(e);</code>
+            <code>});</code>
+        </pre>
+    </section>
+
+    <section class="slide cover w c">
+   		<h2>Бюрократия во View</h2>
+        <img src="pictures/burrecracy.jpg"/>
+    </section>
+    <section class="slide">
+   		<h2>Бюрократия во View</h2>
+        <pre class="l-7 javascript">
+            <code>$el.on('input', function (e) {</code>
+            <code>    model.set('data', this.value);</code>
+            <code>});</code>
+            <code>model.on('change:data', function (model, value) {</code>
+            <code>    $el.val(value);</code>
+            <code>});</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+   		<h2>DOM-шаблоны</h2>
+        <ul>
+            <li>Легче View</li>
+            <li>Связывание Данных и DOM</li>
+            <li>Data-driven</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+   		<h2>Rivets.js</h2>
+        <ul>
+            <li>Простой синтаксис</li>
+            <li>Весит мало</li>
+            <li>Лишнего не просит</li>
+            <li>Написали Rivets-Backbone адаптер</li>
+            <li>Легко написать адаптер под BEMJSON</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+   		<h2>Rivets.js шаблон в BEMJSON</h2>
+        <pre class="l-7 javascript">
+            <code>{</code>
+            <code>    "block": "list",</code>
+            <code>    <mark>"bind"</mark>: {"each-item": "list"},</code>
+            <code>    "content": {</code>
+            <code>        "elem": "input",</code>
+            <code>        <mark>"bind"</mark>: {"value": "item.value | filter"}</code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+   		<h2>Rivets.js шаблон</h2>
+        <pre class="l-7 xml">
+            <code>&lt;ul class="list"&gt;</code>
+            <code>    &lt;li <mark>data-each-item="list"</mark>&gt;</code>
+            <code>        &lt;input <mark>data-value="item.value | filter"</mark>/&gt;</code>
+            <code>    &lt;/li&gt;</code>
+            <code>&lt;/ul&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide cover w c">
+        <img src="pictures/suggest.png"/>
+    </section>
+
+    <section class="slide">
+   		<h2>Связь шаблона и View</h2>
+        <pre class="l-7 javascript">
+            <code>var GeoSuggestView = Backbone.View.extend({</code>
+            <code>    layout: <mark>require('geoGuggestTemplate')</mark>,</code>
+            <code>    initialize: function (viewModel) {</code>
+            <code>        this.setElement(this.layout);</code>
+            <code>        <mark>rivets.bind(this.el, this.model);</mark></code>
+            <code>    }, // ... </code>
+            <code>});</code>
+        </pre>
+    </section>
+
+<!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+
+    <section class="slide cover c">
+        <img src="pictures/next.jpg"/>
+    </section>
+
+    <section class="slide cover c">
+   		<h2>Нет модулей</h2>
+        <img src="pictures/azproduction/wire-mess.png"/>
+    </section>
+
+    <section class="slide">
+   		<h2>Все в глобалах</h2>
+        <ul>
+            <li>Произвольный доступ к модулю</li>
+            <li>Сложно понять зависимости</li>
+            <li>Интерфейс модуля не понятен</li>
+            <li>Сложнее реиспользовать</li>
+            <li>Сложнее тестировать</li>
+        </ul>
+    </section>
+
+    <section class="slide cover c">
+        <img src="pictures/azproduction/common-js-logo.png"/>
+    </section>
+
+    <section class="slide">
+   		<h2>CommonJS/Modules</h2>
+        <ul>
+            <li>Формат проще AMD
+                <ul>
+                    <li>Нет define() обертки</li>
+                    <li>Синхронный require()</li>
+                    <li>Динамический require()</li>
+                </ul>
+            </li>
+            <li class="next">CommonJS в Node.js
+                <ul>
+                    <li>Реиспользование библиотек</li>
+                    <li>Не нужно переключатся на AMD</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide cover c">
+        <img src="pictures/azproduction/js-box-bg.png"/>
+        <img src="pictures/azproduction/lmd-bg.png" class="next"/>
+    </section>
+
+    <section class="slide">
+   		<h2>LMD &mdash; менеджер модулей</h2>
+        <ul>
+            <li>Запуск CJS в браузере</li>
+            <li>Сборка модулей</li>
+            <li>Конфиругация различных сборок</li>
+            <li>Разделение приложения на части</li>
+            <li>Тотальная изоляция кода</li>
+        </ul>
+        <p class="note"><a href="http://habrahabr.ru/post/181536/">Почему не RequireJS?</a></p>
+    </section>
+
+    <section class="slide cover c">
+   		<h2>Callbacks</h2>
+        <img src="pictures/azproduction/pyramid-bg.png"/>
+    </section>
+
+    <section class="slide">
+        <h2>Модальное окно на callback</h2>
+        <pre class="l-7 javascript">
+            <code>var dialog = new Dialog();</code>
+            <code>dialog.$el.appendTo('body');</code>
+            <code>dialog.on('ok', function (data) {</code>
+            <code>    model.once('sync', <mark>done</mark>);</code>
+            <code>    model.save(data);</code>
+            <code>});</code>
+            <code>dialog.on('cancel', fail);</code>
+            <code>dialog.show();</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+   		<h2>В чем же проблема?</h2>
+        <ul>
+            <li>Логический выход в <b>середине</b> кода</li>
+            <li>Лишняя писанина</li>
+            <li>Много непредсказуемой асинхронности
+                <ul>
+                    <li>Обрыв соединения</li>
+                    <li>Ветвление логики</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide cover">
+   		<h2>Luke, use Promise!</h2>
+        <img src="pictures/yoda.jpg"/>
+    </section>
+
+    <section class="slide">
+   		<h2>Dialog &mdash; это Promise</h2>
+        <pre class="l-7 javascript">
+            <code>new Dialog()</code>
+            <code>.show()</code>
+            <code>.then(function (data) {</code>
+            <code>    return controller.save(data);</code>
+            <code>})</code>
+            <code>.then(<mark>done</mark>, fail);</code>
+        </pre>
+        <p class="note"><a href="https://vimeo.com/74925301">Promise &mdash; это не больно!</a></p>
+    </section>
+
+    <section class="slide">
+   		<h2>Обрывы соединения</h2>
+        <pre class="l-7 javascript">
+            <code>new Attempt(function to() {</code>
+            <code>   return controller.save(data);</code>
+            <code>}, function decide(err, attemptNo) {</code>
+            <code>   return askUserWhatToDo(err, attemptNo);</code>
+            <code>})</code>
+            <code>.then(resolve, reject, progress);</code>
+        </pre>
+        <p class="note"><a href="https://github.com/azproduction/promise-attempt">promise-attempt</a></p>
+    </section>
+
+    <section class="slide cover c">
+   		<h2>Сегодня собирается все</h2>
+        <img src="pictures/azproduction/foxcon-bg.png"/>
+        <img src="pictures/azproduction/robotic-arm-bg.png" class="next"/>
+    </section>
+
+    <section class="slide cover c">
+        <img src="pictures/azproduction/grunt-logo-bg.png"/>
+    </section>
+
+    <section class="slide">
+   		<h2>Grunt success!</h2>
+        <ul>
+            <li>Валидация кода перед сборкой
+                <ul>
+                    <li>JSHint, Code Style, Complexity</li>
+                    <li>Нельзя собрать плохой код</li>
+                </ul>
+            </li>
+            <li class="next">Оптимизация css, картинок и svg</li>
+            <li class="next">(Авто-)Сборка
+                <ul>
+                    <li>Watch</li>
+                    <li>Сборка Компонент и Логики</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+   		<h2>Плагины на вооружении</h2>
+        <ul>
+            <li><a href="https://github.com/gruntjs/grunt-contrib-jshint">grunt-jshint</a> + .jshintrc &mdash; поиск ошибок</li>
+            <li><a href="https://github.com/dsheiko/grunt-jscs">grunt-jscs</a> + .jscs.json &mdash; кодстайл</li>
+            <li><a href="https://github.com/gruntjs/grunt-contrib-watch">grunt-watch</a> &mdash; автосборка</li>
+            <li><a href="https://github.com/t32k/grunt-csso">grunt-csso</a> &mdash; оптимизация CSS</li>
+            <li><a href="https://github.com/svg/svgo-grunt">grunt-svgo</a> &mdash; оптимизация SVG</li>
+            <li><a href="https://github.com/megatolya/grunt-enb">grunt-enb</a> &mdash; сборка BEM компонент</li>
+            <li><a href="https://github.com/azproduction/grunt-lmd">grunt-lmd</a> &mdash; сборка CommonJS модулей</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+   		<h2>Выводы</h2>
+        <ul>
+            <li>Нужно мыслить компонентами</li>
+            <li class="next">data-bind
+                <ul>
+                    <li>меньше кода</li>
+                    <li>меньше ошибок</li>
+                    <li>♕Model → View</li>
+                </ul>
+            </li>
+            <li class="next">Backbone ничего не навязывает</li>
+            <li class="next">Promise &mdash; это добро!</li>
+        </ul>
+    </section>
+
+    <div class="slide last">
+        <img src="images/yandex.svg" class="yandex"/>
+        <h2>Backbone в Яндексе</h2>
+        <div class="info">
+            <p class="author">Олег Мохов и Михаил Давыдов</p>
+            <p class="author">Разработчики из Ебурга</p>
+            <p class="author social">
+                <a href="http://habrahabr.ru/users/Olegbl4"><img src="pictures/js.svg" alt=""/></a><a href="http://github.com/mokhov"><img src="pictures/github.svg" alt=""/></a><a href="http://twitter.com/olmokhov_ru"><img src="pictures/twitter.svg" alt=""/></a><a href="http://twitter.com/olmokhov_ru">@olmokhov_ru</a>
+            </p>
+            <p class="author social">
+                <a href="http://habrahabr.ru/users/azproduction"><img src="pictures/js.svg" alt=""/></a><a href="http://github.com/azproduction"><img src="pictures/github.svg" alt=""/></a><a href="http://twitter.com/azproduction"><img src="pictures/twitter.svg" alt=""/></a><a href="http://twitter.com/azproduction">@azproduction</a>
+            </p>
+        </div>
+    </div>
+
+	<div class="progress"><div></div></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/highlight.min.js"></script>
+    <script src="js/shower/shower.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
